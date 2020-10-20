@@ -1,0 +1,18 @@
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.0/jquery.js"></script>
+<h1 id='result'>result</h1>
+<script>
+var data = JSON.stringify({'name':'zhangsan', 'age':'20'});
+$.ajax({
+    url: '/api/addUser',
+    type: 'post',
+    contentType:'application/json',
+    data: data,
+  　success: function(data) {
+        $("#result").html(data);
+    },
+    error: function(e) {
+        alert('ERROR')
+    }
+});
+</script>
+
