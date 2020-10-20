@@ -1,0 +1,56 @@
+<html>
+<head>
+  <meta charset='utf-8'>
+  <script src="https://lib.baomitu.com/jquery/2.2.4/jquery.min.js"></script>
+  <link href="https://lib.baomitu.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="{{url_for('static', filename='style.css')}}" rel="stylesheet">
+  <script src="{{url_for('static', filename='script.js')}}"></script>
+  <title>每日清单</title>
+</head>
+
+<body>
+  <div class='header'>
+    <i class="fa fa-calendar-plus-o"></i> 待做清单
+
+    {% if hasLogin %}
+    <span class='login'>
+      <i class="fa fa-sign-out"></i>
+      <a href='/users/logout'>退出</a>
+    </span>
+    {% else %}
+    <span class='login'>
+      <i class="fa fa-sign-in"></i>
+      <a href='/users/login'>登录</a>
+
+      <i class="fa fa-user-plus"></i>
+      <a href='/users/register'>注册</a>
+    </span>
+    {% endif %}
+  </div>
+
+  {% if hasLogin %}
+  <div>
+    <input type="text" class="row" placeholder="输入待办事项">
+    <i class="fa fa-fw fa-plus-square" onclick='onAddTodo(this);'></i>
+  </div>
+  {% endif %}
+
+  {% for todo in todos %}
+  <div>
+    <input type="text" class="row" value="{{todo.title}}">
+    <i class="fa fa-fw fa-check" onclick='onUpdateTodo({{todo.todoId}});'></i>
+  </div>
+  {% endfor %}
+
+  <div class='header'>
+    <i class="fa fa-calendar-check-o"></i> 完成清单
+  </div>
+
+  {% for done in dones %}
+  <div>
+    <input type="text" class="row" value="{{done.title}}">
+    <i class="fa fa-fw fa-trash" onclick='onDeleteTodo({{done.todoId}});'></i>
+  </div>
+  {% endfor %}
+</body>
+</html>

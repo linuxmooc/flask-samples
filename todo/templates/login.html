@@ -1,0 +1,32 @@
+<html>
+<head>
+  <meta charset='UTF-8'>
+  <link href="https://lib.baomitu.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="{{url_for('static', filename='style.css')}}" rel="stylesheet">
+  <title>登录</title>
+</head>
+
+<body>
+  <div class="header"><i class='fa fa-sign-in'></i> 登录</div>
+  <form action="/users/login" method="POST">
+    <div class="row">
+      {{ form.name.label }}
+      {{ form.name() }}
+      <b>{{ form.name.errors[0] }}</b>
+    </div>
+
+    <div class="row">
+      {{ form.password.label }}
+      {{ form.password() }}
+      <b>{{ form.password.errors[0] }}</b>
+    </div>
+
+    <div class="row">
+      {{ form.submit() }}
+    </div>
+
+    {{ form.hidden_tag() }}
+  </form>
+</body>
+</html>
+

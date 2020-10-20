@@ -1,0 +1,33 @@
+body {
+    width: 400px;
+    margin: auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+.fa {
+    cursor: pointer;
+}
+
+.login {
+    font-size: 80%;
+    font-weight: normal;
+}
+
+.header {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    font-size: 120%;
+    font-weight: bold;
+}
+
+.row {
+    width: 360px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
