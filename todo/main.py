@@ -23,5 +23,3 @@ def index():
     return render_template('index.html', hasLogin = hasLogin, todos = todos, dones = dones)
 
 app.run()
-
-

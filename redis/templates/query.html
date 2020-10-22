@@ -1,0 +1,23 @@
+<html>
+<head>
+<meta charset="UTF-8">
+</head>
+
+<body>
+<h1>全部的键值对</h1>
+<table border=1 cellpadding=0>
+    <tr>
+        <td>键</td>
+        <td>值</td>
+    </tr>
+    {% for key in dict %}
+    <tr> 
+        <td>{{ key }}</td>
+        <td>{{ dict[key] }}</td>
+    </tr> 
+    {% endfor %}
+</table>
+<br>
+<a href="/">返回主页</a>
+</body>
+</html>
