@@ -19,9 +19,8 @@ def after_request(response):
     return response
 
 @app.teardown_request
-def teardown_request(response):
-    print('teardown_request')
-    return response
+def teardown_request(exception):
+    print('teardown_request:', exception)
 
 if __name__ == '__main__':
     app.run()
