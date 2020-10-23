@@ -1,0 +1,23 @@
+<html>
+<meta charset='UTF-8'>
+<h1>登录</h1>
+<form class="form" method="POST">
+    <div>
+        {{ form.email.label }}
+        {{ form.email() }}
+        <b>{{ form.email.errors[0] }}</b>
+    </div>
+
+    <div>
+        {{ form.password.label }}
+        {{ form.password() }}
+        <b>{{ form.password.errors[0] }}</b>
+    </div>
+
+    <div>
+        {{ form.submit() }}
+    </div>
+
+    {{ form.hidden_tag() }}
+</form>
+</html>

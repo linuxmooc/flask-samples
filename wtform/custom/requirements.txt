@@ -1,0 +1,4 @@
+flask
+wtforms
+flask-wtf
+email-validator
