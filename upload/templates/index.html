@@ -1,0 +1,21 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<title>文件上传</title>
+</head>
+
+<body>
+<h2>上传文件</h2>
+<form action="/upload" method="post" enctype="multipart/form-data">
+    <input type="file" name="file" class="input">
+    <input type="submit" value="上传" class="input button">
+</form>
+
+<h2>下载文件</h2>
+<ol>
+{% for entry in entries %}
+    <li><a href='/files/{{entry}}'>{{entry}}</a>
+{% endfor %}
+</ol>
+</body>
+</html>

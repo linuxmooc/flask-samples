@@ -1,0 +1,14 @@
+.button {
+    color: white;
+    background-color: black;
+    padding-left: 2px;
+    padding-right: 2px;
+    border: 1px solid black;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.row {
+    margin-top: 4px;
+    margin-bottom: 4px;
+}

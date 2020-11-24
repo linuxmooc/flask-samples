@@ -1,0 +1,28 @@
+<html>
+<head>
+<meta charset='utf-8'>
+<script src="https://lib.baomitu.com/jquery/2.2.4/jquery.min.js"></script>
+<link href="{{url_for('static', filename='style.css')}}" rel="stylesheet">
+<script src="{{url_for('static', filename='script.js')}}"></script>
+</head>
+
+<body>
+<h1>通讯录</h1>
+<div class="row">
+  <input type="text" placeholder='姓名'>
+  <input type="text" placeholder='电话'>
+  <span class="button" onclick="addUser(this);">增加</span>
+</div>
+
+<div>
+  {% for user in users %}
+  <div class="row">
+    <input type="text" value="{{user.name}}" placeholder='姓名'>
+    <input type="text" value="{{user.phone}}" placeholder='电话'>
+    <span class="button" onclick="updateUser(this, {{user.id}});">修改</span>
+    <span class="button" onclick="deleteUser(this, {{user.id}});">删除</span>
+  </div>
+  {% endfor %}
+</div>
+</body>
+</html>
