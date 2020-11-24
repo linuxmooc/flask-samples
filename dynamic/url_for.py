@@ -4,6 +4,11 @@ app = Flask(__name__)
  
 @app.route('/')
 def index():
+    print(url_for('index'))
+    print(url_for('login')) 
+    print(url_for('login', user = 'tom'))
+    print(url_for('profile', user = 'jerry'))
+    print(url_for('static', filename = 'script.js'))
     return 'index'
  
 @app.route('/login/')
@@ -14,9 +19,4 @@ def login():
 def profile():
     return 'profile'
 
-with app.test_request_context():
-    print(url_for('index'))
-    print(url_for('login')) 
-    print(url_for('login', user = 'tom'))
-    print(url_for('profile', user = 'jerry'))
-    print(url_for('static', filename = 'script.js'))
+app.run()
